@@ -96,6 +96,7 @@ body {
 
 .search:hover {
   transform: scale(1.1);
+  background-color: var(--hover-color);
 }
 
 .switch {
@@ -109,6 +110,7 @@ body {
   padding: 10px;
   border-radius: 50%;
   box-shadow: var(--box-shadow);
+  background-color: var(--hover-color);
   transition: 0.3s;
 }
 
@@ -183,7 +185,8 @@ body {
   align-items: center;
 }
 
-.special-title h3 {
+.special-title h2 {
+  margin-bottom: 20px;
   font-size: 2rem;
   color: var(--main-text-color);
   margin-bottom: 10px;
@@ -242,6 +245,56 @@ body {
   line-height: 1.6;
 }
 /* End Services */
+/* Portfolio Section */
+.parents-container {
+  padding: 60px 20px;
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.item {
+  width: 200px;
+  border-radius: 10px;
+  height: fit-content;
+  padding: 20px;
+  overflow: hidden;
+  box-shadow: var(--card-box-shadow);
+  transition: 0.3s ease;
+  background-color: var(--hover-color);
+  flex-shrink: 0;
+}
+
+.item img {
+  width: 100%;
+  display: block;
+  object-fit: cover; /* Ser till att bilden fyller utrymmet snyggt */
+}
+
+.item a {
+  display: block;
+  text-decoration: none;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* End portfolio */
+
+/* start Ex */
+
+/* start Ex */
 
 /* start Media*/
 @media (max-width: 767px) {
