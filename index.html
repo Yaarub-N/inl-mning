@@ -20,8 +20,8 @@
           </label>
           <div class="menu-toggle">☰</div>
           <ul class="ulMenu">
-            <li><a href="">Home</a></li>
-            <li><a href="">Services</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Content</a></li>
           </ul>
@@ -33,24 +33,59 @@
     </header>
 
     <main class="parents">
-      <div class="container">
-        <section class="portfolid">
-          <div class="title">
-            <h2>Yaarub</h2>
+      <section class="Home container" id="home">
+        <div class="title">
+          <p>Hellow, Welcome</p>
+          <h2>I'm Yaarub</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+            magnam sit beatae dolore quam iusto hic modi, consequuntur provident
+            atque?
+          </p>
+        </div>
+        <div class="img">
+          <img src="bilder/IMG-20241125-WA0002.jpg" alt="" />
+        </div>
+      </section>
+
+      <!-- End Home -->
+      <section class="Services container" id="services">
+        <div class="special-title">
+          <h3>My <span>Services</span></h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+            accusamus tempore itaque veritatis iste quis laboriosam mollitia
+            quasi ipsa quidem?
+          </p>
+        </div>
+        <div class="service-cards">
+          <div class="service-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Web Development</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Recusandae magnam sit beatae dolore quam iusto hic modi,
-              consequuntur provident atque?
+              We create stunning and responsive websites tailored to your needs.
             </p>
           </div>
-          <div class="img">
-            <img src="bilder/IMG-20241125-WA0002.jpg" alt="" />
+          <div class="service-card">
+            <i class="fa-solid fa-object-group"></i>
+            <h3>Graphic Design</h3>
+            <p>
+              Creative designs that make your brand stand out and connect with
+              your audience.
+            </p>
           </div>
-        </section>
-        <section></section>
-      </div>
+          <div class="service-card">
+            <i class="fa-solid fa-table-list"></i>
+            <h3>UI & UX</h3>
+            <p>
+              Designing intuitive user experiences and sleek interfaces for your
+              applications.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- End Services -->
     </main>
-
     <script src="mainJS.js"></script>
   </body>
 </html>
