@@ -297,12 +297,12 @@ body {
 /* End portfolio */
 
 /* start Experience */
-.card span {
+.Experience .card span {
   position: relative;
   font-size: 1.3rem;
   text-align: start;
 }
-.card span::after {
+.Experience .card span::after {
   content: "";
   position: absolute;
   width: calc(100% + 20px);
@@ -315,6 +315,13 @@ body {
   border: solid 2px var(--main-text2-color);
 }
 /* End Experience */
+/* start References */
+.img-card {
+  width: 100px;
+  border: solid 5px var(--main-text2-color);
+  border-radius: 50%;
+}
+/* End References */
 
 /* start Media*/
 @media (max-width: 767px) {
