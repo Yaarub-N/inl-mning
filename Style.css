@@ -352,6 +352,7 @@ body {
   margin-right: 5px;
   background-color: #313131;
   color: #b9b9b9;
+  border: solid 2px var(--main-text2-color);
   border-radius: 10px;
 }
 .about .social-media a:nth-child(1):hover {
@@ -363,6 +364,42 @@ body {
 .about .social-media a:nth-child(2):hover {
   background-color: #ff0000;
 }
+/* end */
+
+/* start contact */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact form input {
+  padding: 10px;
+  border-radius: 5px;
+}
+.contact form textarea {
+  border-radius: 5px;
+  padding: 10px;
+}
+.contact form input[type="submit"] {
+  background-color: var(--main-text2-color);
+  color: var(--main-text-color);
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Hover-effekt */
+.contact form input[type="submit"]:hover {
+  background-color: var(--hover-color);
+  box-shadow: var(--box-shadow);
+}
+
+/* End contact */
 /* start Media*/
 @media (max-width: 767px) {
   .ulMenu {
