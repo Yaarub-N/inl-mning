@@ -155,7 +155,7 @@ body {
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid var(--main-text-color);
+  border: 5px solid var(--main-text2-color);
   box-shadow: var(--box-shadow);
   background-color: var(--hover-color);
   transition: transform 0.3s ease;
@@ -345,25 +345,7 @@ body {
 .about .link a:hover {
   background-color: var(--hover-color);
 }
-.about .social-media a {
-  text-decoration: none;
-  padding: 10px;
-  text-align: center;
-  margin-right: 5px;
-  background-color: #313131;
-  color: #b9b9b9;
-  border: solid 2px var(--main-text2-color);
-  border-radius: 10px;
-}
-.about .social-media a:nth-child(1):hover {
-  background-color: #1877f2;
-}
-.about .social-media a:nth-child(3):hover {
-  background-color: #1da1f2;
-}
-.about .social-media a:nth-child(2):hover {
-  background-color: #ff0000;
-}
+
 /* end */
 
 /* start contact */
@@ -393,26 +375,72 @@ body {
   transition: 0.3s ease;
 }
 
-/* Hover-effekt */
 .contact form input[type="submit"]:hover {
   background-color: var(--hover-color);
   box-shadow: var(--box-shadow);
 }
 
 /* End contact */
+
+/* start fotter */
+.footer h2 {
+  color: var(--main-text2-color);
+}
+.footer .fa-facebook-f {
+  color: #1877f2;
+}
+.footer .fa-twitter {
+  color: #1da1f2;
+}
+.footer .fa-youtube {
+  color: #ff0000;
+}
+/* end fotter */
+
+/* made */
+.made {
+  padding: 10px;
+  text-align: center;
+}
+.made span {
+  color: var(--main-text2-color);
+}
+/* End made */
 /* start Media*/
-@media (max-width: 767px) {
+@media (max-width: 1020px) {
   .ulMenu {
     flex-direction: column;
     gap: 10px;
     display: none;
     position: absolute;
     background-color: var(--main-background-color);
-    top: 100%;
+    top: 143%;
     left: 0;
+    width: calc(100%);
     right: 0;
     padding: 10px;
   }
+
+  /* .ulMenu::before {
+    position: absolute;
+    content: "";
+    border: 10px solid;
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+    top: -28px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .ulMenu::after {
+    position: absolute;
+    content: "";
+    border: 10px solid;
+    border-color: transparent transparent var(--hover-color) transparent;
+    top: -8px;
+    left: 50%;
+    transform: translate(-50%);
+  } */
 
   .ulMenu li {
     color: var(--main-text1-color);
@@ -425,6 +453,8 @@ body {
     display: block;
     cursor: pointer;
     color: var(--main-text-color);
+    font-size: 30px;
+    left: -7px;
   }
 
   .menu-toggle:hover + .ulMenu {
