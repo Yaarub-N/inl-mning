@@ -70,24 +70,24 @@ body {
 }
 
 .ulMenu a {
-  color: var(--accent-color);
+  color: var(--main-text-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .ulMenu li {
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+  border-bottom: 2px solid var(--hover-color);
+  transition: 0.3s ease;
   padding: 20px;
 }
 
 .ulMenu li:hover {
-  border-color: var(--accent-color);
+  border-color: var(--hover-color);
   background-color: var(--hover-color);
 }
 
 .search {
-  color: var(--accent-color);
+  color: var(--main-text-color);
   padding: 10px;
   border-radius: 50%;
   box-shadow: var(--box-shadow);
@@ -105,7 +105,7 @@ body {
 }
 
 .switch + label {
-  color: var(--accent-color);
+  color: var(--main-text-color);
   font-size: 1.5rem;
   cursor: pointer;
   padding: 10px;
@@ -141,7 +141,7 @@ body {
 .title h2 {
   font-size: 2rem;
   color: var(--main-text-color);
-  border-bottom: 3px solid var(--accent-color);
+  border-bottom: 3px solid var(--main-text-color);
   margin-bottom: 10px;
 }
 
@@ -158,7 +158,7 @@ body {
   border: 5px solid var(--main-text2-color);
   box-shadow: var(--box-shadow);
   background-color: var(--hover-color);
-  transition: transform 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .img img {
@@ -335,7 +335,7 @@ body {
 }
 .about .link a {
   text-decoration: none;
-  color: var(--main-text1-color);
+  color: var(--main-text-color);
   background-color: var(--main-background-color);
   border: solid 2px var(--main-text2-color);
   padding: 10px;
@@ -386,7 +386,7 @@ body {
 .footer h2 {
   color: var(--main-text2-color);
 }
-.footer .fa-facebook-f {
+.footer .fa-linkedin {
   color: #1877f2;
 }
 .footer .fa-twitter {
@@ -407,7 +407,7 @@ body {
 }
 /* End made */
 /* start Media*/
-@media (max-width: 1020px) {
+@media (max-width: 1025px) {
   .ulMenu {
     flex-direction: column;
     gap: 10px;
@@ -443,7 +443,7 @@ body {
   } */
 
   .ulMenu li {
-    color: var(--main-text1-color);
+    color: var(--main-text-color);
     padding: 25px;
     list-style: none;
     text-align: center;
@@ -464,5 +464,6 @@ body {
   .Home {
     flex-direction: column;
     text-align: center;
+    padding-top: 100px;
   }
 }
