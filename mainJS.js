@@ -42,11 +42,9 @@ function displayWeather(data) {
   `;
 }
 
-// Example coordinates (latitude and longitude for Province of Turin, Italy)
-const lat = 59.334591; // Latitude for Province of Turin
-const lon = 18.06324; // Longitude for Province of Turin
+const lat = 59.334591;
+const lon = 18.06324;
 
-// Fetch and display weather data on page load
 window.onload = () => {
   fetchWeatherData(lat, lon);
 };
