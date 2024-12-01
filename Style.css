@@ -62,7 +62,6 @@ body {
 }
 
 .ulMenu {
-  display: flex;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -71,9 +70,8 @@ body {
 .ulMenu a {
   color: var(--main-text-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: 0.3s ease;
 }
-
 .ulMenu li {
   border-bottom: 2px solid var(--hover-color);
   transition: 0.3s ease;
@@ -93,11 +91,11 @@ body {
 .weather {
   position: absolute;
   color: var(--main-text-color);
-  right: -30px;
+  right: -33px;
   padding: 10px;
   box-shadow: var(--box-shadow);
   cursor: pointer;
-  top: 64px;
+  top: 49px;
   transition: 0.3s ease;
   display: none;
 }
@@ -127,7 +125,7 @@ body {
 
 .switch + label {
   color: var(--main-text-color);
-  font-size: 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
   padding: 10px;
   border-radius: 50%;
@@ -442,15 +440,16 @@ input[type="submit"]:hover {
 /* End made */
 /* start Media*/
 @media (max-width: 1025px) {
+  .header {
+    padding: 10px;
+  }
   .ulMenu {
     flex-direction: column;
-    gap: 10px;
     display: none;
     position: absolute;
     background-color: var(--main-background-color);
-    top: 143%;
+    top: 131%;
     left: 0;
-    width: calc(100%);
     right: 0;
   }
 
@@ -477,9 +476,12 @@ input[type="submit"]:hover {
 
   .ulMenu li {
     color: var(--main-text-color);
-    padding: 25px;
+    padding: 20px;
     list-style: none;
     text-align: center;
+  }
+  .ulMenu li:nth-child(1) {
+    border-top: solid var(--hover-color);
   }
   .menu-toggle {
     position: relative;
