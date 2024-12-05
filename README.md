@@ -130,6 +130,3 @@ cd weather-theme-toggle
 - [OpenWeatherMap API](https://openweathermap.org/)
 - Icons from OpenWeatherMap for accurate weather representation.
 
----
-
-Feel free to update this file with additional details as your project evolves! Let me know if you need further enhancements or customization.
