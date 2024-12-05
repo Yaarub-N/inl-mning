@@ -3,44 +3,56 @@
 Welcome to my Developer Portfolio! This project showcases my skills, experiences, and the services I offer as a frontend developer.
 
 ## Table of Contents
-- [About](#about)
+- [About the Project](#about-the-project)
 - [Features](#features)
-- [Getting Started](#getting-started)
+- [Design Structure](#design-structure)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Contact](#contact)
 
+## About the Project
 
-## About
-
-This portfolio was developed to highlight my professional journey as a developer. It includes sections about me, my services, portfolio, work experiences, references, and contact details.
+This portfolio is designed to highlight my professional journey as a developer. It includes sections about me, my services, project portfolio, work experiences, references, and contact information.
 
 ## Features
 
-- **Responsive Design:** Ensures that the portfolio looks good on all devices, from desktops to mobile phones.
- ![Skärmbild 2024-12-05 132735](https://github.com/user-attachments/assets/f4231802-1058-46cf-96bb-575db36b2c43)
- ![Skärmbild 2024-12-05 133237](https://github.com/user-attachments/assets/7891a2aa-2b0e-4304-a461-e11decf36781)
-
-
-- **Dark Mode Toggle:** Users can switch between light and dark themes.
+- **Responsive Design:** The portfolio is designed to look great on all devices, from desktops to mobile phones.
   
-![Skärmbild 2024-12-05 133416](https://github.com/user-attachments/assets/690dcde7-1d2f-4a96-b596-479b7b3615f7)
+  ![Responsive Design](https://github.com/user-attachments/assets/b6859230-0f03-4ba7-b0fb-7214606cb843)
+  ![Mobile Views Example](https://github.com/user-attachments/assets/e1635633-de26-47f5-975c-fddbf28e3df7)
 
- ![Skärmbild 2024-12-05 131858](https://github.com/user-attachments/assets/c07f9d51-e755-489b-bded-079139a53128)
+- **Dark and Light Theme:** Users can switch between dark and light themes for a better user experience.
 
- ![Skärmbild 2024-12-05 133408](https://github.com/user-attachments/assets/9fe197c7-5ef0-426d-9b4a-e52a073a5338)
+  ![Dark Theme Enabled](https://github.com/user-attachments/assets/690dcde7-1d2f-4a96-b596-479b7b3615f7)
+  ![Light Theme](https://github.com/user-attachments/assets/c07f9d51-e755-489b-bded-079139a53128)
 
-![Skärmbild 2024-12-05 131821](https://github.com/user-attachments/assets/ad7c92e2-97a5-43eb-b8ac-f3618ef27d79)
+- **Live Weather Display:** Displays current weather information based on a predefined location.
 
-- **Live Weather Display:** Shows current weather based on a predefined location.
-  
-![Skärmbild 2024-12-05 133926](https://github.com/user-attachments/assets/eaa68d7e-f90a-4cfd-aa91-bbbf203d1cb6)
+  ![Live Weather](https://github.com/user-attachments/assets/eaa68d7e-f90a-4cfd-aa91-bbbf203d1cb6)
 
-- **Portfolio Section:** Displays projects with live links.
-  
- ![Skärmbild 2024-12-05 134259](https://github.com/user-attachments/assets/5bfa7852-9f04-47f3-b19e-c2f3e49e291c)
+- **Portfolio Section:** Showcases projects with links to live demos.
 
+  ![Project Portfolio](https://github.com/user-attachments/assets/5bfa7852-9f04-47f3-b19e-c2f3e49e291c)
 
-## Getting Started
+## Design Structure
+
+This portfolio is built with a modern web development structure:
+
+- **HTML:** The foundational structure is created with semantic HTML5 to ensure accessibility and SEO optimization. Each section of the portfolio is well-defined to provide user-friendly navigation.
+
+- **CSS:** I used custom CSS rules to style the components of the portfolio. Color themes and styles are implemented using CSS variables, making it easy to switch between different themes. I employed **Flexbox** to create responsive layouts, allowing the content to adapt seamlessly on all devices.
+
+- **JavaScript:** To enhance interactivity, I implemented a theme toggler and a weather display function that fetches data from a weather API.
+
+### Color Scheme
+
+The portfolio design utilizes the following colors:
+
+- **Background Color:** #ffffff (white for light theme), #0e1627 (dark blue for dark theme)
+- **Text Color:** #333333 (dark gray for light theme), #ffffff (white for dark theme)
+- **Accent Colors:** #f9c740 (yellow for buttons and hover effects)
+
+## Installation
 
 To view the portfolio:
 
@@ -56,7 +68,7 @@ To view the portfolio:
 
 ## Usage
 
-Feel free to explore the different sections of my portfolio. Click on the various links to see my projects, download my CV, or view my social media profiles.
+Feel free to explore the different sections of my portfolio. Click on the links to see my projects, download my CV, or visit my social media profiles.
 
 ## Contact
 
@@ -64,4 +76,3 @@ If you want to get in touch, you can reach out to me via:
 - [Email](mailto:your-email@example.com)
 - [LinkedIn](https://www.linkedin.com/in/your-profile/)
 - [GitHub](https://github.com/Yaarub-N)
-
