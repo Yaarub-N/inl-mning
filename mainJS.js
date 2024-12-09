@@ -48,3 +48,72 @@ const lon = 18.06324;
 window.onload = () => {
   fetchWeatherData(lat, lon);
 };
+
+// validering
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form fields
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const message = document.getElementById("message");
+
+    // Get error message elements
+    const nameError = document.getElementById("nameError");
+    const emailError = document.getElementById("emailError");
+    const phoneError = document.getElementById("phoneError");
+    const messageError = document.getElementById("messageError");
+
+    let isValid = true;
+
+    // Name validation
+    if (name.value.trim().length < 2) {
+      nameError.classList.add("visible");
+      isValid = false;
+    } else {
+      nameError.classList.remove("visible");
+    }
+
+    // Email validation
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (!emailPattern.test(email.value.trim())) {
+      emailError.classList.add("visible");
+      isValid = false;
+    } else {
+      emailError.classList.remove("visible");
+    }
+
+    // Phone validation
+    const phonePattern = /^[0-9]+$/;
+    if (
+      !phonePattern.test(phone.value.trim()) ||
+      phone.value.trim().length < 10
+    ) {
+      phoneError.classList.add("visible");
+      isValid = false;
+    } else {
+      phoneError.classList.remove("visible");
+    }
+
+    // Message validation
+    if (message.value.trim() === "") {
+      messageError.classList.add("visible");
+      isValid = false;
+    } else {
+      messageError.classList.remove("visible");
+    }
+
+    if (isValid) {
+      message.classList.add("success");
+      message.value =
+        "Thank you for your message! I will get back to you shortly.";
+      name.value = "";
+      email.value = "";
+      phone.value = "";
+    }
+  });
+});

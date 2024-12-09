@@ -45,8 +45,7 @@
           <h2>I'm Yaarub</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-            magnam sit beatae dolore quam iusto hic modi, consequuntur provident
-            atque?
+            magnam sit beatae dolore quam iusto 
           </p>
           <a href="#contact" class="bContact">Contact me</a>
         </div>
@@ -313,19 +312,29 @@
               corporis doloremque inventore nostrum?
             </p>
           </div>
-          <form action="">
-            <input type="text" placeholder="your name" />
-            <input type="email" placeholder="your email" />
-            <input type="number" placeholder="your phone" />
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="tell me about your needs"
-            ></textarea>
-            <input type="submit" value="Send" />
-          </form>
+           <form id="contactForm">
+        <div class="form-group">
+            <input type="text" id="name" placeholder="Your name">
+            <span id="nameError" class="error-message">Name must contain at least 2 letters.</span>
+        </div>
+        
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Your email">
+            <span id="emailError" class="error-message">Please enter a valid email address.</span>
+        </div>
+        
+        <div class="form-group">
+            <input type="tel" id="phone" placeholder="Your phone">
+            <span id="phoneError" class="error-message">Phone number must contain only numbers ex(0700295829).</span>
+        </div>
+        
+        <div class="form-group">
+            <textarea id="message" cols="30" rows="10" placeholder="Tell me about your needs"></textarea>
+            <span id="messageError" class="error-message">Message cannot be empty.</span>
+        </div>
+        
+        <button type="submit " class="bContact">Send</button>
+    </form>
         </div>
       </div>
            </main>
