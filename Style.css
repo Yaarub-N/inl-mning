@@ -12,6 +12,8 @@
   --hover-color: #e8f0fe;
   --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   --card-box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+  --success-color: #4caf50;
+  --success-background: #e8f5e9;
 }
 
 .dark-theme {
@@ -21,6 +23,8 @@
   --hover-color: #1d2738;
   --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
   --card-box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+  --success-color: #81c784;
+  --success-background: #1b3a2f;
 }
 
 body {
@@ -155,7 +159,6 @@ body {
 
 .title {
   max-width: 400px;
-  position: relative;
 }
 
 .title h2 {
@@ -167,13 +170,13 @@ body {
 
 .title p {
   color: var(--main-text2-color);
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 .bContact {
-  position: absolute;
   text-decoration: none;
-  padding: 10px;
+  margin: 10px 0;
+  padding: 10px 20px;
   background-color: var(--main-text2-color);
   color: var(--main-background-color);
   transition: 0.3s;
@@ -184,13 +187,15 @@ body {
 
 .bContact:hover {
   background-color: var(--main-text-color);
-  transform: scale(1.1);
+  box-shadow: var(--box-shadow);
+  transform: scale(1.03);
 }
 
 .img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  margin: 30px;
   overflow: hidden;
   border: 5px solid var(--main-text2-color);
   box-shadow: var(--box-shadow);
@@ -330,7 +335,7 @@ body {
 
 .item:hover {
   transform: scale(1.05);
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--box-shadow);
 }
 
 /* End portfolio */
@@ -388,44 +393,44 @@ body {
 /* end */
 
 /* start contact */
-.contact form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.contact form input {
-  padding: 10px;
-  border-radius: 5px;
-  margin: 10px;
-  outline: none;
-  border: 0;
-  color: var(--main-text-color);
-  background-color: var(--hover-color);
-}
-.contact form textarea {
-  border-radius: 5px;
-  padding: 10px;
-  border: 0;
-  background-color: var(--hover-color);
-  color: var(--main-text-color);
-  margin: 20px;
-  outline: none;
-}
-input[type="submit"] {
-  background-color: var(--main-text2-color);
-  color: var(--main-text-color);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+form {
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-input[type="submit"]:hover {
-  background-color: var(--main-text2-color);
-  transform: scale(1.05);
+.form-group {
+  margin-bottom: 15px;
 }
 
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+textarea.success {
+  color: var(--success-color);
+  background-color: var(--success-background);
+  border: 2px solid var(--success-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none; /* Hidden by default */
+}
+
+.error-message.visible {
+  display: block; /* Show error message */
+}
 /* End contact */
 
 /* start fotter */
@@ -439,7 +444,7 @@ input[type="submit"]:hover {
 .footer .fa-linkedin {
   color: #1877f2;
 }
-.footer . fa-x-twitter {
+.footer .fa-x-twitter {
   color: black;
   background-color: white;
 }
