@@ -4,10 +4,8 @@ themeSwitch.addEventListener("change", () => {
   document.body.classList.toggle("dark-theme", themeSwitch.checked);
 });
 
-// Replace this with your actual API key
 const apiKey = "8b406db3f50e5fb0c6d569894cf3b50b";
 
-// Function to fetch weather data based on latitude and longitude
 async function fetchWeatherData(lat, lon) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`; // Using metric units for Celsius
 
@@ -25,16 +23,12 @@ async function fetchWeatherData(lat, lon) {
   }
 }
 
-// Function to display weather data
 function displayWeather(data) {
   const weatherElement = document.querySelector(".weather");
 
-  // Extract necessary data from the API response
   const weatherDescription = data.weather[0].description;
-  const temperature = data.main.temp.toFixed(1); // Rounded temperature
+  const temperature = data.main.temp.toFixed(1);
   const iconCode = data.weather[0].icon;
-
-  // Construct the HTML to display the weather
 
   weatherElement.innerHTML = `
     <span>${weatherDescription} - ${temperature}°C</span>
@@ -54,15 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
 
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Prevent form submission
-
-    // Get form fields
+    event.preventDefault();
     const name = document.getElementById("name");
     const email = document.getElementById("email");
     const phone = document.getElementById("phone");
     const message = document.getElementById("message");
 
-    // Get error message elements
     const nameError = document.getElementById("nameError");
     const emailError = document.getElementById("emailError");
     const phoneError = document.getElementById("phoneError");
@@ -86,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       emailError.classList.remove("visible");
     }
-
     // Phone validation
     const phonePattern = /^[0-9]+$/;
     if (
@@ -98,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       phoneError.classList.remove("visible");
     }
-
     // Message validation
     if (message.value.trim() === "") {
       messageError.classList.add("visible");
@@ -106,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       messageError.classList.remove("visible");
     }
-
     if (isValid) {
       message.classList.add("success");
       message.value =

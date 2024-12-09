@@ -325,7 +325,7 @@ body {
 .item img {
   width: 100%;
   display: block;
-  object-fit: cover; /* Ser till att bilden fyller utrymmet snyggt */
+  object-fit: cover;
 }
 
 .item a {
@@ -393,13 +393,14 @@ body {
 /* end */
 
 /* start contact */
+
 form {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 50px;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 input,
@@ -425,11 +426,11 @@ textarea.success {
   color: red;
   font-size: 14px;
   margin-top: 5px;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
 .error-message.visible {
-  display: block; /* Show error message */
+  display: block;
 }
 /* End contact */
 
