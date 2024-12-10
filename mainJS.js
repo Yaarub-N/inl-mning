@@ -32,7 +32,7 @@ function displayWeather(data) {
 
   weatherElement.innerHTML = `
     <span>${weatherDescription} - ${temperature}°C</span>
-    <img src="http://openweathermap.org/img/wn/${iconCode}@2x.png" alt="${weatherDescription}" />
+    <img src="https://openweathermap.org/img/wn/${iconCode}@2x.png" alt="${weatherDescription}" />
   `;
 }
 
