@@ -5,7 +5,7 @@
   scroll-behavior: smooth;
 }
 
-:root {
+.dark-theme {
   --main-background-color: #ffffff;
   --main-text-color: #333333;
   --main-text2-color: #666666;
@@ -16,7 +16,7 @@
   --success-background: #e8f5e9;
 }
 
-.dark-theme {
+:root {
   --main-background-color: #0e1627;
   --main-text-color: #ffffff;
   --main-text2-color: #f9c740;
@@ -314,7 +314,7 @@ body {
   width: 250px;
   border-radius: 10px;
   height: fit-content;
-  padding: 10px;
+  padding: 5px;
   overflow: hidden;
   box-shadow: var(--card-box-shadow);
   transition: 0.3s ease;
@@ -400,14 +400,14 @@ form {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 input,
 textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--main-text-color);
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 16px;
@@ -444,13 +444,16 @@ textarea.success {
 }
 .footer .fa-linkedin {
   color: #1877f2;
+  font-size: 2rem;
 }
 .footer .fa-x-twitter {
   color: black;
   background-color: white;
+  font-size: 2rem;
 }
-.footer .fa-youtube {
+.footer .fa-square-youtube {
   color: #ff0000;
+  font-size: 2rem;
 }
 /* end fotter */
 
