@@ -33,8 +33,15 @@ The portfolio is built to be **responsive**, **accessible**, and visually appeal
 - **Responsive Design**: The portfolio dynamically adjusts to different screen sizes using **flexbox** and **media queries**.
   
 - **Light and Dark Themes**: Users can toggle between light and dark modes to match their preferences.
+   
+   ![Skärmbild 2024-12-05 133416](https://github.com/user-attachments/assets/a4541da8-9244-4842-b459-3b40dba2ff4e)![Skärmbild 2024-12-05 133408](https://github.com/user-attachments/assets/78339e66-7507-456f-b2ea-dd66704dc1f9)
+
+
 
 - **Weather Integration**: A live weather widget enhances interactivity and adds a personal touch.
+
+     ![Skärmbild 2024-12-05 133926](https://github.com/user-attachments/assets/ade73a1f-678b-4395-82d6-4ad7c5721c7b)
+
 
 - **Portfolio Section**: Displays projects with hover effects, ensuring engaging visuals and easy access to project links.
 
