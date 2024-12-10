@@ -38,14 +38,14 @@ The portfolio is built to be **responsive**, **accessible**, and visually appeal
 
 - **Portfolio Section**: Displays projects with hover effects, ensuring engaging visuals and easy access to project links.
 
-- **Interactive UI Elements**: Subtle animations, hover effects, and smooth scrolling ensure a polished user experience.
+- **Interactive UI Elements**:hover effects, and smooth scrolling.
 
 ---
 
 ## Design Structure
 
 ### HTML
-- **Semantic Structure**: The use of HTML5 elements ensures accessibility and SEO-friendliness.
+- **Semantic Structure**: The use of HTML5 elements ensures accessibility.
 - Sections are organized for intuitive navigation.
 
 ### CSS
@@ -54,13 +54,12 @@ The portfolio is built to be **responsive**, **accessible**, and visually appeal
 - **Transitions & Animations**: Enhance interactivity while maintaining simplicity.
 
 ### JavaScript
-- Handles theme toggling, weather API integration, and interactive effects.
+- Handles theme toggling, weather API integration,input validering, and interactive effects.
 
 ---
 
 ## Color Scheme
 
-The portfolio employs a **split-complementary color scheme** to create a balanced and visually appealing design:
 - **Monochromatic Base**: Light and dark tones for primary backgrounds and text.
 - **Accent Colors**: Golden yellow for emphasis and interactive elements, creating a vibrant contrast.
 - **Hover Feedback**: Subtle blue shades to provide interactive cues.
