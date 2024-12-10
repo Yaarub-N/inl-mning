@@ -136,6 +136,7 @@ body {
   box-shadow: var(--box-shadow);
   background-color: var(--hover-color);
   transition: 0.3s;
+  border: solid 1px var(--main-text-color);
 }
 
 .switch:checked + label {
@@ -175,8 +176,8 @@ body {
 
 .bContact {
   text-decoration: none;
-  margin: 10px 0;
-  padding: 10px 20px;
+  margin: 0.6rem 0;
+  padding: 0.5rem 1rem;
   background-color: var(--main-text2-color);
   color: var(--main-background-color);
   transition: 0.3s;
@@ -394,6 +395,10 @@ body {
 
 /* start contact */
 
+.contact {
+  margin-top: 20px;
+}
+
 .contact p {
   max-width: 400px;
 }
@@ -404,7 +409,7 @@ form {
 }
 
 .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 input,
@@ -423,18 +428,16 @@ textarea.success {
   border: 2px solid var(--success-color);
   box-shadow: var(--box-shadow);
   border-radius: 5px;
-  padding: 10px;
 }
 
 .error-message {
   color: red;
-  font-size: 14px;
-  margin-top: 5px;
-  display: none;
+  font-size: 11px;
+  visibility: hidden;
 }
 
 .error-message.visible {
-  display: block;
+  visibility: visible;
 }
 /* End contact */
 
