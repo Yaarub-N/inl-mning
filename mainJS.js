@@ -105,3 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+const menuToggle = document.querySelector(".menu-toggle");
+const ulMenu = document.querySelector(".ulMenu");
+
+menuToggle.addEventListener("click", () => {
+  ulMenu.classList.toggle("active");
+});

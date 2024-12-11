@@ -518,14 +518,15 @@ textarea.success {
     cursor: pointer;
     color: var(--main-text-color);
     font-size: 30px;
-    left: -7px;
   }
 
-  .menu-toggle:hover + .ulMenu {
+  /* .menu-toggle:hover + .ulMenu {
     display: flex;
     box-shadow: var(--box-shadow);
+  } */
+  .ulMenu.active {
+    display: block;
   }
-
   .Home {
     flex-direction: column;
     text-align: center;
