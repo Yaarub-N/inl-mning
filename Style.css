@@ -53,7 +53,10 @@ body {
   transform: translate(-50%);
   z-index: 100;
 }
-
+/* .fPosition {
+  position: relative;
+  left: calc(47% + 6px);
+} */
 .menu {
   display: flex;
   position: relative;
@@ -505,7 +508,7 @@ textarea.success {
 
   .ulMenu li {
     color: var(--main-text-color);
-    padding: 20px;
+    padding: 12px;
     list-style: none;
     text-align: center;
   }
