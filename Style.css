@@ -53,10 +53,7 @@ body {
   transform: translate(-50%);
   z-index: 100;
 }
-/* .fPosition {
-  position: relative;
-  left: calc(47% + 6px);
-} */
+
 .menu {
   display: flex;
   position: relative;
@@ -375,7 +372,6 @@ body {
 /* End References */
 /* start About */
 
-/* End About */
 .about .card {
   width: 100%;
   margin-top: 40px;
@@ -384,6 +380,7 @@ body {
 .about .card p {
   margin-bottom: 35px;
 }
+
 .about .link a {
   text-decoration: none;
   color: var(--main-text-color);
@@ -485,27 +482,6 @@ textarea.success {
     right: 0;
   }
 
-  /* .ulMenu::before {
-    position: absolute;
-    content: "";
-    border: 10px solid;
-    background-color: var(--hover-color);
-    border-color: var(--hover-color);
-    top: -28px;
-    left: 50%;
-    transform: translate(-50%);
-  }
-
-  .ulMenu::after {
-    position: absolute;
-    content: "";
-    border: 10px solid;
-    border-color: transparent transparent var(--hover-color) transparent;
-    top: -8px;
-    left: 50%;
-    transform: translate(-50%);
-  } */
-
   .ulMenu li {
     color: var(--main-text-color);
     padding: 15px;
@@ -522,11 +498,6 @@ textarea.success {
     color: var(--main-text-color);
     font-size: 30px;
   }
-
-  /* .menu-toggle:hover + .ulMenu {
-    display: flex;
-    box-shadow: var(--box-shadow);
-  } */
   .ulMenu.active {
     display: block;
   }
@@ -534,5 +505,11 @@ textarea.success {
     flex-direction: column;
     text-align: center;
     padding-top: 100px;
+  }
+}
+@media (max-width: 756px) {
+  .about .link {
+    display: flex;
+    flex-direction: column;
   }
 }
