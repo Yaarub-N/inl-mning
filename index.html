@@ -1,380 +1,666 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Yaarub Nassr är fullstackutvecklare i Stockholm med fokus på .NET, React, systemintegration och stabila digitala produkter."
+    />
+    <meta name="theme-color" content="#061c20" />
+    <meta property="og:title" content="Yaarub Nassr — Fullstackutvecklare" />
+    <meta
+      property="og:description"
+      content="Från komplex logik till enkla upplevelser."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="bilder/yaarub-portrait.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="Style.css" />
-    <script
-      src="https://kit.fontawesome.com/6c755fe0c3.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Document</title>
+    <script src="mainJS.js" defer></script>
+    <title>Yaarub Nassr — Fullstackutvecklare</title>
   </head>
   <body>
-    <header class="header container ">
-      <div class="container">
-        <nav class="menu">
-          <input type="checkbox" id="theme-switch" class="switch" />
-          <label for="theme-switch">
-            <i class="fa-solid fa-code"></i>
-          </label>
-          <div class="menu-toggle">☰</div>
-          <ul class="ulMenu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#Experience">Experiences</a></li>
-            <li><a href="#references">References</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <div class="weather-container">
-            <i class="cloud-hover fa-solid fa-cloud"></i>
-         <div class="weather">
-    <i class="fa-solid fa-cloud"></i>
-        </div>
-        </div>
-        </nav>
+    <div class="intro" aria-hidden="true">
+      <div class="intro__inner">
+        <span class="intro__eyebrow">PORTFOLIO / 2026</span>
+        <p class="intro__name">YAARUB NASSR</p>
+        <div class="intro__line"><span></span></div>
       </div>
+    </div>
+
+    <a class="skip-link" href="#main">Hoppa till innehållet</a>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="spotlight" aria-hidden="true"></div>
+
+    <header class="site-header" data-header>
+      <!--<a class="brand" href="#top" aria-label="Yaarub Nassr, startsida">
+        <span></span><i></i>
+      </a>-->
+      <nav class="nav" aria-label="Huvudmeny" data-nav>
+        <a href="#projects">Projekt</a>
+        <a href="#about">Om mig</a>
+        <a href="#experience">Erfarenhet</a>
+      </nav>
+      <!--<a class="header-cta" href="mailto:yaarubnassr@gmail.com">
+        <span class="status-dot"></span> Tillgänglig för dialog
+      </a>-->
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Öppna meny"
+        aria-expanded="false"
+        data-menu
+      >
+        <span></span><span></span>
+      </button>
     </header>
 
-    <main class="parents">
-      <section class="Home container" id="home">
-        <div class="title">
-          <p>Hello, Welcome</p>
-          <h2>I'm Yaarub</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-            magnam sit beatae dolore quam iusto 
+    <main id="main">
+      <section class="hero" id="top">
+        <canvas class="hero__canvas" aria-hidden="true"></canvas>
+        <div class="hero__copy">
+          <p class="kicker reveal">FULLSTACKUTVECKLARE · STOCKHOLM</p>
+          <h1 class="reveal">
+            Jag gör komplex<br />
+            <span class="accent-word">logik</span> <em>mänsklig.</em>
+          </h1>
+          <p class="hero__lead reveal">
+            Jag bygger webb- och systemlösningar som kombinerar robust
+            .NET-backend, moderna gränssnitt och stabila arbetsflöden.
           </p>
-          <a href="#contact" class="bContact">Contact me</a>
+          <div class="hero__actions reveal">
+            <a class="button button--primary magnetic" href="#projects">
+              Utforska mitt arbete
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a class="text-link" href="cv/yaarub-nassr-cv.pdf" download
+              >Ladda ner CV <span>↘</span></a
+            >
+          </div>
         </div>
-        <div class="img">
-          <img src="bilder/IMG-20241125-WA0002 (1).avif" alt="" />
+
+        <div class="hero__visual reveal" data-tilt>
+          <div class="portrait-wrap">
+            <div class="portrait-grid" aria-hidden="true"></div>
+            <img
+              src="bilder/yaarub-portrait.png"
+              alt="Porträtt av Yaarub Nassr"
+              width="1154"
+              height="961"
+              fetchpriority="high"
+            />
+            <span class="portrait-label">59.3293° N / 18.0686° E</span>
+          </div>
+          <div class="float-card float-card--code" aria-hidden="true">
+            <span>currently_building</span>
+            <strong>CreaCV<span class="blink">_</span></strong>
+          </div>
+          <div class="float-card float-card--stack" aria-hidden="true">
+            <span>CORE STACK</span>
+            <div><b>.NET</b><b>React</b><b>Azure</b></div>
+          </div>
+        </div>
+
+        <div class="hero__footer reveal">
+          <span>Scrolla för att upptäcka</span>
+          <div class="scroll-line"><i></i></div>
+          <span>01 / 05</span>
         </div>
       </section>
 
-      <!-- End Home -->
-         <!-- Start About -->
-      <section class="parents-container container about" id="about">
-        <div class="special-title">
-          <h2>About <span>Me</span></h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            laborum delectus in tenetur voluptatem, ratione optio eligendi
-            praesentium quia tempora iste ea, ullam adipisci maxime. Velit
-            corporis doloremque inventore nostrum?
-          </p>
-        </div>
-        <div class="about-content">
-          <div class="card">
-            <img
-              class="img-card"
-              src="bilder/f5f199a6-4269-49cf-aeeb-84257494513f._CR0,0,500,500_SX460_.jpg"
-              alt=""
-            />
-            <h3>Yaarub</h3>
-            <span class="title">Halve Frontend Developer</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              et reiciendis voluptatum, amet est natus quaerat ducimus
-            </p>
-            <div class="link">
-               <a
-                href="https://codepen.io/Yaarub"
-                download
-                class="btn-download-cv"
-              >
-               <i class="fa-brands fa-codepen"></i>
-               CodePen
-              </a>
-              <a
-                href="cv/57890db6f8c93502024653d47572c42daaffa63e (2).pdf"
-                download
-                class="btn-download-cv"
-              >
-                Download CV
-              </a>
-
-              <a
-                href="https://github.com/Yaarub-N"
-                download
-                class="btn-download-cv"
-              >
-                <i class="fa-brands fa-github"></i>
-                GitHub
-              </a>
-            </div>
-          
-          </div>
-        </div>
-      </section>
-      <!-- End About -->
-      <!-- start Services -->
-      <section class="Services container" id="services">
-        <div class="special-title">
-          <h2>My <span>Services</span></h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-            accusamus tempore itaque veritatis iste quis laboriosam mollitia
-            quasi ipsa quidem?
-          </p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <i class="fa-solid fa-laptop-code"></i>
-            <h3>Web Development</h3>
-            <p>
-              We create stunning and responsive websites tailored to your needs.
-            </p>
-          </div>
-          <div class="card">
-            <i class="fa-solid fa-object-group"></i>
-            <h3>Graphic Design</h3>
-            <p>
-              Creative designs that make your brand stand out and connect with
-              your audience.
-            </p>
-          </div>
-          <div class="card">
-            <i class="fa-solid fa-table-list"></i>
-            <h3>UI & UX</h3>
-            <p>
-              Designing intuitive user experiences and sleek interfaces for your
-              applications.
-            </p>
-          </div>
-        </div>
-      </section>
-      <!-- End Services -->
-      <!-- start Portfolio -->
-      <section class="parents-container container" id="portfolio">
-        <div class="special-title">
-          <h2>My <span>Portfolio</span></h2>
-          <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour.
-          </p>
-        </div>
-        <div class="flex">
-          <div class="item">
-            <a href="https://yaarub-n.github.io/project-1/">
-              <img
-                src="bilder/Skärmbild 2024-11-26 180956.png"
-                alt="Portfolio Image 1"
-            /></a>
-          </div>
-          <div class="item">
-            <a href="https://yaarub-n.github.io/project-2/">
-              <img
-                src="bilder/Skärmbild 2024-11-26 192352.png"
-                alt="Portfolio Image 1"
-            /></a>
-          </div>
-          <div class="item">
-            <a href="https://yaarub-n.github.io/project-3/">
-              <img
-                src="bilder/Skärmbild 2024-11-26 180935.png"
-                alt="Portfolio Image 1"
-            /></a>
-          </div>
-        </div>
-      </section>
-      <!-- End Portfolio -->
-      <!-- start Experience -->
-      <section class="parents-container container Experience" id="Experience">
-        <div class="special-title">
-          <h2>My <span>Experiences</span></h2>
-          <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour.
-          </p>
-        </div>
-        <div class="flex">
-          <div class="card">
-            <span>Juni-2020-2024</span>
-            <h3>UX/UI Designer</h3>
-            <span>Figma</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-              sequi illo. Dolorem doloremque numquam quos officia perspiciatis,
-              voluptates tempore optio.
-            </p>
-          </div>
-          <div class="card">
-            <span>Juni-2020-2024</span>
-            <h3>UX/UI Designer</h3>
-            <span>Figma</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-              sequi illo. Dolorem doloremque numquam quos officia perspiciatis,
-              voluptates tempore optio.
-            </p>
-          </div>
-          <div class="card">
-            <span>Juni-2020-2024</span>
-            <h3>UX/UI Designer</h3>
-            <span>Figma</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-              sequi illo. Dolorem doloremque numquam quos officia perspiciatis,
-              voluptates tempore optio.
-            </p>
-          </div>
-          <div class="card">
-            <span>Juni-2020-2024</span>
-            <h3>UX/UI Designer</h3>
-            <span>Figma</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-              sequi illo. Dolorem doloremque numquam quos officia perspiciatis,
-              voluptates tempore optio.
-            </p>
-          </div>
-        </div>
-      </section>
-      <!-- End Experience -->
-      <!-- Start references -->
-      <section class="parents-container container references" id="references">
-        <div class="special-title">
-          <h2>My <span>References</span></h2>
-          <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour.
-          </p>
-        </div>
-        <div class="flex">
-          <div class="card">
-            <img
-              class="img-card"
-              src="bilder/images (3).jpg"
-              alt=""
-            />
-            <h3>Adam</h3>
-            <span class="title">Full Stack Developer</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              et reiciendis voluptatum, amet est natus quaerat ducimus
-            </p>
-          </div>
-          <div class="card">
-            <img class="img-card" src="bilder/images (1).jpg" alt="" />
-            <h3>Adam</h3>
-            <span class="title">Full Stack Developer</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              et reiciendis voluptatum, amet est natus quaerat ducimus
-            </p>
-          </div>
-          <div class="card">
-            <img class="img-card" src="bilder/images (2).jpg" alt="" />
-            <h3>Adam</h3>
-            <span class="title">Full Stack Developer</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              et reiciendis voluptatum, amet est natus quaerat ducimus
-            </p>
-          </div>
-          <div class="card">
-            <img class="img-card" src="bilder/nedladdning.jpg" alt="" />
-            <h3>Adam</h3>
-            <span class="title">Full Stack Developer</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              et reiciendis voluptatum, amet est natus quaerat ducimus
-            </p>
-          </div>
-          <div class="card">
-            <img class="img-card" src="bilder/avatar-06.png" alt="" />
-            <h3>Adam</h3>
-            <span class="title">Full Stack Developer</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-              et reiciendis voluptatum, amet est natus quaerat ducimus
-            </p>
-          </div>
-        </div>
-      </section>
-      <!-- End references -->
-    
-      <!-- start contact -->
-      <div class="parents-container container contact" id="contact">
-        <div class="flex">
-          <div class="special-title">
-            <h2>Contact <span>Me</span></h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              laborum delectus in tenetur voluptatem, ratione optio eligendi
-              praesentium quia tempora iste ea, ullam adipisci maxime. Velit
-              corporis doloremque inventore nostrum?
-            </p>
-          </div>
-           <form id="contactForm">
-        <div class="form-group">
-            <input type="text" id="name" placeholder="Your name">
-            <span id="nameError" class="error-message">Name must contain at least 2 letters.</span>
-        </div>
-        
-        <div class="form-group">
-            <input type="email" id="email" placeholder="Your email">
-            <span id="emailError" class="error-message">Please enter a valid email address.</span>
-        </div>
-        
-        <div class="form-group">
-            <input type="tel" id="phone" placeholder="Your phone">
-            <span id="phoneError" class="error-message">Phone number must contain only numbers t.ex(0700295829).</span>
-        </div>
-        
-        <div class="form-group">
-            <textarea id="message" cols="20" rows="7" placeholder="Tell me about your needs"></textarea>
-            <span id="messageError" class="error-message">Message cannot be empty.</span>
-        </div>
-        
-        <button type="submit " class="bContact">Send</button>
-    </form>
+      <div class="ticker" aria-label="Tekniker jag arbetar med">
+        <div class="ticker__track">
+          <span>C#</span><i>✦</i><span>ASP.NET CORE</span><i>✦</i
+          ><span>REACT</span><i>✦</i> <span>TYPESCRIPT</span><i>✦</i
+          ><span>AZURE</span><i>✦</i><span>SYSTEMINTEGRATION</span><i>✦</i>
+          <span>C#</span><i>✦</i><span>ASP.NET CORE</span><i>✦</i
+          ><span>REACT</span><i>✦</i> <span>TYPESCRIPT</span><i>✦</i
+          ><span>AZURE</span><i>✦</i><span>SYSTEMINTEGRATION</span><i>✦</i>
         </div>
       </div>
-           </main>
-      <!-- end contact -->
-      <div class="footer parents-container container">
-        <div class="container">
-          <div class="content">
-            <div class="special-title">
-              <h2>Social <span>media</span> </h2>
-            
-              <div class="social-media">
-                <a href="#"> <i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"> <i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"> <i class="fa-brands fa-square-youtube"></i></i></a>
+
+      <section class="section projects" id="projects">
+        <div class="section-heading reveal">
+          <div>
+            <p class="kicker">UTVALT ARBETE / 2024—2026</p>
+            <h2>Produkter som<br /><em>gör jobbet.</em></h2>
+          </div>
+          <p>
+            Från AI-stödda verktyg till betalflöden och CMS-lösningar — byggda
+            med fokus på verklig nytta.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project project--featured reveal" data-tilt>
+            <a
+              href="https://staging.creacv.net/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Besök CreaCV"
+            >
+              <div class="project__top">
+                <span class="project__number">01</span>
+                <span class="project__link">Live projekt ↗</span>
+              </div>
+              <div
+                class="project__visual project__visual--creacv"
+                aria-hidden="true"
+              >
+                <div class="cv-window">
+                  <div class="cv-window__bar">
+                    <i></i><i></i><i></i><span>creacv.net/editor</span>
+                  </div>
+                  <div class="cv-window__body">
+                    <div class="cv-sidebar">
+                      <b>Din profil</b><span></span><span></span><span></span>
+                      <div class="ai-pill">✦ AI-förbättra</div>
+                    </div>
+                    <div class="cv-page">
+                      <div class="cv-head"><i></i><span></span></div>
+                      <b></b>
+                      <p></p>
+                      <p></p>
+                      <p></p>
+                      <b></b>
+                      <p></p>
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project__body">
+                <div>
+                  <p class="kicker">AI · SAAS · CI/CD</p>
+                  <h3>CreaCV</h3>
+                </div>
+                <p>
+                  En komplett CV-applikation med AI-assisterad
+                  innehållsstruktur, live preview och PDF-export — från idé till
+                  separata staging- och produktionsflöden.
+                </p>
+              </div>
+              <ul class="tags">
+                <li>Next.js</li>
+                <li>TypeScript</li>
+                <li>OpenAI SDK</li>
+                <li>CI/CD</li>
+              </ul>
+            </a>
+          </article>
+
+          <article class="project reveal" data-tilt>
+            <a
+              href="https://eskilstunaklatterklubb.se/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Besök Eskilstuna Klätterklubb"
+            >
+              <div class="project__top">
+                <span class="project__number">02</span
+                ><span class="project__link">Besök sidan ↗</span>
+              </div>
+              <div
+                class="project__visual project__visual--climb"
+                aria-hidden="true"
+              >
+                <div class="climb-word">UPPÅT</div>
+                <svg viewBox="0 0 500 280">
+                  <path
+                    d="M0 252L84 202l51 17 78-113 72 64 52-35 52 57 58-26 53 86"
+                  />
+                  <circle cx="213" cy="106" r="7" />
+                </svg>
+              </div>
+              <div class="project__body">
+                <div>
+                  <p class="kicker">CMS · INTEGRATION</p>
+                  <h3>Klätterklubben</h3>
+                </div>
+                <p>
+                  Evenemangshantering, flerstegsautentisering och
+                  integrationsarbete för Swish i en flexibel Umbraco-struktur.
+                </p>
+              </div>
+              <ul class="tags">
+                <li>Umbraco</li>
+                <li>.NET</li>
+                <li>Swish</li>
+              </ul>
+            </a>
+          </article>
+
+          <article class="project reveal" data-tilt>
+            <div class="project__top">
+              <span class="project__number">03</span
+              ><span class="project__link">Systemprojekt</span>
+            </div>
+            <div
+              class="project__visual project__visual--data"
+              aria-hidden="true"
+            >
+              <div class="data-flow">
+                <span>&lt;XML /&gt;</span><i></i><b>✓</b><i></i
+                ><span>EXPORT</span>
+              </div>
+              <div class="data-log">
+                <span>validating schema...</span
+                ><span>42 records processed</span
+                ><strong>no errors found ✓</strong>
+              </div>
+            </div>
+            <div class="project__body">
+              <div>
+                <p class="kicker">DESKTOP · DATA</p>
+                <h3>XML-verktyg</h3>
               </div>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Temporibus nulla rem, dignissimos iste aspernatur
+                WPF-applikation för robust XML-import, validering,
+                formatkontroll och export — byggd för att göra felcase
+                begripliga.
               </p>
             </div>
+            <ul class="tags">
+              <li>C#</li>
+              <li>WPF</li>
+              <li>XML</li>
+              <li>Validering</li>
+            </ul>
+          </article>
+
+          <article class="project project--wide reveal" data-tilt>
+            <div class="project__top">
+              <span class="project__number">04</span
+              ><span class="project__link">Fullstackprojekt</span>
+            </div>
+            <div class="project__body">
               <div>
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Sweden, Stocholm, Vega 13657</span>
+                <p class="kicker">API · BETALNING</p>
+                <h3>Bokning,<br />utan friktion.</h3>
               </div>
-              <div>
-                <i class="fa-regular fa-clock"></i>
-                <span>Business Hours: From 10:00 To 18:00</span>
+              <p>
+                Ett sammanhängande boknings- och betalflöde med ett tydligt
+                React-gränssnitt, ASP.NET Core Web API och Stripe-integration.
+              </p>
+            </div>
+            <div class="booking-flow" aria-hidden="true">
+              <div><span>01</span>VÄLJ TID</div>
+              <i></i>
+              <div><span>02</span>BOKA</div>
+              <i></i>
+              <div><span>03</span>BETALA</div>
+              <b>✓</b>
+            </div>
+            <ul class="tags">
+              <li>ASP.NET Core</li>
+              <li>Web API</li>
+              <li>React</li>
+              <li>Stripe</li>
+            </ul>
+          </article>
+
+          <article class="project reveal" data-tilt>
+            <a
+              href="https://pureskinlab.se/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Besök Pure SkinLab"
+            >
+              <div class="project__top">
+                <span class="project__number">05</span
+                ><span class="project__link">Besök sidan ↗</span>
               </div>
-              <div>
-                <i class="fas 0 fa-phone-volume fa-fw"></i
-                ><span>+46700295829 <br />+46700295829</span>
+              <div
+                class="project__visual project__visual--skin"
+                aria-hidden="true"
+              >
+                <div class="skin-mark">PS</div>
+                <p>PURE<br /><em>SKINLAB</em></p>
+                <span>SKIN · CARE · CONFIDENCE</span>
               </div>
+              <div class="project__body">
+                <div>
+                  <p class="kicker">KUNDPROJEKT · WEBB</p>
+                  <h3>Pure SkinLab</h3>
+                </div>
+                <p>
+                  En responsiv kundwebb med tydlig informationsstruktur, lugn
+                  visuell hierarki och fokus på en trygg användarupplevelse.
+                </p>
+              </div>
+              <ul class="tags">
+                <li>Responsiv design</li>
+                <li>Frontend</li>
+                <li>UX</li>
+              </ul>
+            </a>
+          </article>
+
+          <article class="project reveal" data-tilt>
+            <a
+              href="https://www.nordicaxiskiropraktik.se/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Besök Nordic Axis Kiropraktik"
+            >
+              <div class="project__top">
+                <span class="project__number">06</span
+                ><span class="project__link">Besök sidan ↗</span>
+              </div>
+              <div
+                class="project__visual project__visual--axis"
+                aria-hidden="true"
+              >
+                <div class="axis-rings"><i></i><i></i><i></i><b>+</b></div>
+                <p>NORDIC<br /><strong>AXIS</strong></p>
+                <span>KIROPRAKTIK</span>
+              </div>
+              <div class="project__body">
+                <div>
+                  <p class="kicker">KUNDPROJEKT · HÄLSA</p>
+                  <h3>Nordic Axis</h3>
+                </div>
+                <p>
+                  En stabil och responsiv webbplats för kiropraktik med tydlig
+                  layout, lättillgänglig information och genomtänkta
+                  kontaktvägar.
+                </p>
+              </div>
+              <ul class="tags">
+                <li>Responsiv design</li>
+                <li>Frontend</li>
+                <li>Tillgänglighet</li>
+              </ul>
+            </a>
+          </article>
+
+          <article class="project project--archive reveal" data-tilt>
+            <a
+              href="https://yaarub-n.github.io/project-1/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Besök tidigare projekt 1"
+            >
+              <div class="project__top">
+                <span class="project__number">07</span
+                ><span class="project__link">Öppna projekt ↗</span>
+              </div>
+              <div class="project__visual project__visual--archive">
+                <img
+                  src="bilder/Skärmbild 2024-11-26 180956.avif"
+                  alt="Förhandsvisning av landing page-projekt"
+                  width="1123"
+                  height="800"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project__body">
+                <div>
+                  <p class="kicker">TIDIGARE ARBETE · UI</p>
+                  <h3>Landing page</h3>
+                </div>
+                <p>
+                  Ett tidigt responsivt webbkoncept med hero-sektion, navigation
+                  och tydlig visuell ingång.
+                </p>
+              </div>
+              <ul class="tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </a>
+          </article>
+
+          <article class="project project--archive reveal" data-tilt>
+            <a
+              href="https://yaarub-n.github.io/project-2/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Besök tidigare projekt 2"
+            >
+              <div class="project__top">
+                <span class="project__number">08</span
+                ><span class="project__link">Öppna projekt ↗</span>
+              </div>
+              <div class="project__visual project__visual--archive">
+                <img
+                  src="bilder/Skärmbild 2024-11-26 192352 (1).avif"
+                  alt="Förhandsvisning av Kasper-projektet"
+                  width="1123"
+                  height="800"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project__body">
+                <div>
+                  <p class="kicker">TIDIGARE ARBETE · UI</p>
+                  <h3>Kasper</h3>
+                </div>
+                <p>
+                  Ett mörkt portfolio- och byråkoncept med bildslider,
+                  innehållspanel och responsiv navigation.
+                </p>
+              </div>
+              <ul class="tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </a>
+          </article>
+
+          <article
+            class="project project--archive project--archive-wide reveal"
+            data-tilt
+          >
+            <a
+              href="https://yaarub-n.github.io/project-3/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Besök tidigare projekt 3"
+            >
+              <div class="project__top">
+                <span class="project__number">09</span
+                ><span class="project__link">Öppna projekt ↗</span>
+              </div>
+              <div class="project__visual project__visual--archive">
+                <img
+                  src="bilder/Skärmbild 2024-11-26 180935.avif"
+                  alt="Förhandsvisning av Coding World-projektet"
+                  width="1121"
+                  height="800"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project__body">
+                <div>
+                  <p class="kicker">TIDIGARE ARBETE · WEBB</p>
+                  <h3>Coding World</h3>
+                </div>
+                <p>
+                  En lekfull webbplats med illustration, tydlig
+                  innehållshierarki och fokus på kodning, böcker, spel och
+                  events.
+                </p>
+              </div>
+              <ul class="tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Responsiv design</li>
+              </ul>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="about__statement reveal">
+          <p class="kicker">OM MIG / HUR JAG TÄNKER</p>
+          <h2>Backendens stabilitet.<br />Frontendens <em>känsla.</em></h2>
+        </div>
+        <div class="about__grid">
+          <div class="about__copy reveal">
+            <p class="lead">
+              Jag trivs bäst där teknik möter tydlig nytta — när en komplicerad
+              process kan bli ett lugnt och självklart flöde för användaren.
+            </p>
+            <p>
+              Jag arbetar genom hela stacken med C#, ASP.NET Core, Web API,
+              React och TypeScript. Min bakgrund inom ekonomi ger mig dessutom
+              ett affärsperspektiv: jag vill förstå varför vi bygger, inte bara
+              hur.
+            </p>
+            <p>
+              I team tar jag ansvar, kommunicerar öppet och använder AI-verktyg
+              genomtänkt för bättre struktur, felsökning och effektivare
+              utvecklingsflöden.
+            </p>
+            <a class="text-link" href="mailto:yaarubnassr@gmail.com"
+              >Låt oss bygga något bra <span>↗</span></a
+            >
+          </div>
+          <div class="principles reveal">
+            <div>
+              <span>01</span>
+              <h3>Tydlig struktur</h3>
+              <p>
+                Kod och gränssnitt ska vara enkla att förstå, ändra och lita på.
+              </p>
+            </div>
+            <div>
+              <span>02</span>
+              <h3>Stabila flöden</h3>
+              <p>
+                Validering, felhantering och integrationer är en del av
+                upplevelsen.
+              </p>
+            </div>
+            <div>
+              <span>03</span>
+              <h3>Verklig användarnytta</h3>
+              <p>Teknikval börjar i problemet — inte i trenden.</p>
             </div>
           </div>
         </div>
-      </div>
-      <div class="made">
-        <p>Made<span> By </span> Yaarub</p>
-      </div>
-      <!-- end footer  -->
-    <script src="mainJS.js"></script>
+      </section>
+
+      <section class="section experience" id="experience">
+        <div class="section-heading reveal">
+          <div>
+            <p class="kicker">ERFARENHET / UTBILDNING</p>
+            <h2>Byggt på<br /><em>nyfikenhet.</em></h2>
+          </div>
+          <p>
+            Praktisk systemutveckling, modern webbutbildning och en ekonomisk
+            grund.
+          </p>
+        </div>
+        <div class="timeline">
+          <article class="timeline__item reveal">
+            <div class="timeline__year">2021—NU</div>
+            <div>
+              <p class="kicker">INFOSOLUTIONS · STOCKHOLM</p>
+              <h3>Backendutvecklare <em>(LIA / praktik)</em></h3>
+            </div>
+            <p>
+              Interna .NET-applikationer för data, validering och filhantering.
+              Förbättring av befintliga system, Razor Pages och
+              formatkonvertering i bland annat Base64 och HL7.
+            </p>
+          </article>
+          <article class="timeline__item reveal">
+            <div class="timeline__year">.NET</div>
+            <div>
+              <p class="kicker">NACKADEMIN</p>
+              <h3>Webbutveckling .NET</h3>
+            </div>
+            <p>
+              C#, ASP.NET Core, Web API, Entity Framework, React, SQL, Azure och
+              grunder i CI/CD — från databas till driftsatt gränssnitt.
+            </p>
+          </article>
+          <article class="timeline__item reveal">
+            <div class="timeline__year">BUSINESS</div>
+            <div>
+              <p class="kicker">FAKULTETEN FÖR EKONOMI</p>
+              <h3>Ekonomi & management</h3>
+            </div>
+            <p>
+              Mikro- och makroekonomi, redovisning, finans, affärsstrategi,
+              ekonomisk analys och internationell handel.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section toolkit" aria-labelledby="toolkit-title">
+        <p class="kicker reveal">VERKTYGSLÅDAN</p>
+        <h2 id="toolkit-title" class="reveal">
+          Rätt teknik.<br /><em>Rätt anledning.</em>
+        </h2>
+        <div class="skills reveal">
+          <span>C#</span><span>ASP.NET Core</span><span>Razor Pages</span
+          ><span>Web API</span> <span>Entity Framework</span><span>SQL</span
+          ><span>React</span><span>Next.js</span> <span>TypeScript</span
+          ><span>JavaScript</span><span>Umbraco</span><span>Optimizely</span>
+          <span>Azure</span><span>Azure DevOps</span><span>CI/CD</span
+          ><span>Docker</span> <span>Git</span><span>Systemintegration</span
+          ><span>Validering</span><span>Filhantering</span>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact__orb" aria-hidden="true"></div>
+        <p class="kicker reveal">HAR DU EN IDÉ?</p>
+        <h2 class="reveal">Låt oss göra den<br /><em>verklig.</em></h2>
+        <a
+          class="contact__email magnetic reveal"
+          href="mailto:yaarubnassr@gmail.com"
+          >yaarubnassr@gmail.com <span>↗</span></a
+        >
+        <div class="contact__meta reveal">
+          <p>
+            Stockholm, Sverige<br /><a href="tel:+46700295829"
+              >+46 70 029 58 29</a
+            >
+          </p>
+          <div>
+            <a
+              href="https://www.linkedin.com/in/yaarub-nassr-b687a1284/"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn ↗</a
+            >
+            <a
+              href="https://github.com/Yaarub-N"
+              target="_blank"
+              rel="noreferrer"
+              >GitHub ↗</a
+            >
+            <a href="https://codepen.io/Yaarub" target="_blank" rel="noreferrer"
+              >CodePen ↗</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <!--<a class="brand" href="#top"><span></span><i></i></a>
+      <p>-->
+        Designad & byggd med omtanke — © <span data-year>2026</span> Yaarub
+        Nassr
+      </p>
+      <a href="#top">Till toppen ↑</a>
+    </footer>
   </body>
 </html>
