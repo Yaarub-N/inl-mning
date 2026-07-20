@@ -1298,6 +1298,7 @@
   @media (max-width: 900px) {
     .site-header {
       inset-inline: 1rem;
+      justify-content: flex-end;
     }
     .header-cta {
       display: none;
