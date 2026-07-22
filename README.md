@@ -1,4 +1,4 @@
-# Yaarub Nassr — Portfolio
+# Yaarub Nassr · Portfolio
 
 En skräddarsydd, responsiv portfolio för Yaarub Nassr, fullstackutvecklare i Stockholm.
 
@@ -7,7 +7,7 @@ En skräddarsydd, responsiv portfolio för Yaarub Nassr, fullstackutvecklare i S
 - Faktabaserad presentation från aktuellt CV
 - Nio projektcase: CreaCV, Eskilstuna Klätterklubb, XML-verktyg, bokningsflöde, Pure SkinLab, Nordic Axis och tre tidigare frontendprojekt
 - Erfarenhet, utbildning och komplett teknikprofil
-- Responsiv one-page-design med intro, scroll-reveals, canvas-animationer och mikrointeraktioner
+- Responsiv one-page-design med projektfilter, interaktiv processkortlek, Stack Lab, scroll-reveals och mikrointeraktioner
 - Tillgänglig navigation, reduced-motion-stöd och semantisk HTML
 - Direktlänkar till e-post, telefon, LinkedIn, GitHub, CodePen och nedladdningsbart CV
 
