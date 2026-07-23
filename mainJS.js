@@ -1,8 +1,30 @@
+const translations = window.portfolioTranslations;
+let currentLanguage = "sv";
+try {
+  const savedLanguage = localStorage.getItem("portfolio-language");
+  if (savedLanguage === "sv" || savedLanguage === "en") currentLanguage = savedLanguage;
+} catch (_) {
+  // Swedish remains the default if storage is unavailable.
+}
+
+function translate(key) {
+  return translations[currentLanguage]?.[key] ?? translations.sv?.[key] ?? key;
+}
+
+function formatTranslation(key, values = {}) {
+  return Object.entries(values).reduce(
+    (text, [name, value]) => text.replaceAll(`{${name}}`, String(value)),
+    translate(key),
+  );
+}
+
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const header = document.querySelector("[data-header]");
 const menuButton = document.querySelector("[data-menu]");
 const nav = document.querySelector("[data-nav]");
 const menuLinks = [...nav.querySelectorAll("a")];
+const languageButtons = [...document.querySelectorAll("[data-language]")];
+const languageStatus = document.querySelector("[data-language-status]");
 const progressBar = document.querySelector(".page-progress span");
 const mobileMenuQuery = window.matchMedia("(max-width: 900px)");
 const introWasSeen = document.documentElement.classList.contains("intro-seen");
@@ -39,7 +61,7 @@ function setMenuState(open, restoreFocus = true) {
   document.body.classList.toggle("menu-open", open);
   document.documentElement.classList.toggle("menu-open", open);
   menuButton.setAttribute("aria-expanded", String(open));
-  menuButton.setAttribute("aria-label", open ? "Stäng meny" : "Öppna meny");
+  menuButton.setAttribute("aria-label", translate(open ? "menu.close" : "menu.open"));
 
   if (open) {
     requestAnimationFrame(() => menuLinks[0]?.focus({ preventScroll: true }));
@@ -67,7 +89,7 @@ document.addEventListener("keydown", (event) => {
   }
 
   if (event.key !== "Tab") return;
-  const focusableElements = [...menuLinks, menuButton];
+  const focusableElements = [...menuLinks, ...languageButtons, menuButton];
   const first = focusableElements[0];
   const last = focusableElements[focusableElements.length - 1];
 
@@ -165,7 +187,7 @@ if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
   document.addEventListener("pointerover", (event) => {
     const target = event.target.closest("[data-cursor]");
     if (!target) return;
-    cursorOrb.querySelector("span").textContent = target.dataset.cursor || "Öppna";
+    cursorOrb.querySelector("span").textContent = target.dataset.cursor || translate("global.cursorOpen");
     cursorOrb.classList.add("is-visible");
   });
   document.addEventListener("pointerout", (event) => {
@@ -176,11 +198,6 @@ if (!reducedMotion && window.matchMedia("(pointer: fine)").matches) {
   document.documentElement.addEventListener("mouseleave", () => cursorOrb.classList.remove("is-visible"));
 }
 
-const heroFocusContent = {
-  backend: "API:er, datalager och validering.",
-  frontend: "Responsiva gränssnitt i React och Next.js.",
-  integration: "Systemintegration, Azure och CI/CD.",
-};
 const heroFocusButtons = [...document.querySelectorAll("[data-hero-focus]")];
 const heroFocusCopy = document.querySelector("[data-hero-focus-copy]");
 const routeNodes = [...document.querySelectorAll("[data-route-node]")];
@@ -203,30 +220,41 @@ heroFocusButtons.forEach((button) => {
       ],
       { duration: reducedMotion ? 1 : 280, easing: "ease-out" },
     );
-    heroFocusCopy.textContent = heroFocusContent[focus];
+    heroFocusCopy.textContent = translate(`hero.focus.${focus}`);
   });
 });
 
 const projectFilterButtons = [...document.querySelectorAll("[data-project-filter]")];
 const projects = [...document.querySelectorAll(".project[data-category]")];
 const projectStatus = document.querySelector("[data-project-status]");
+let activeProjectFilter = "all";
+
+function updateProjectStatus() {
+  const visibleCount = projects.filter((project) => !project.hidden).length;
+  if (activeProjectFilter === "all") {
+    projectStatus.textContent = formatTranslation("projects.statusAll", { count: visibleCount });
+  } else if (visibleCount === 1) {
+    projectStatus.textContent = translate("projects.statusOne");
+  } else {
+    projectStatus.textContent = formatTranslation("projects.statusCount", { count: visibleCount });
+  }
+}
 
 projectFilterButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const filter = button.dataset.projectFilter;
+    activeProjectFilter = filter;
     const updateProjects = () => {
-      let visibleCount = 0;
       projects.forEach((project) => {
         const visible = filter === "all" || project.dataset.category === filter;
         project.hidden = !visible;
-        if (visible) visibleCount += 1;
       });
       projectFilterButtons.forEach((item) => {
         const active = item === button;
         item.classList.toggle("is-active", active);
         item.setAttribute("aria-pressed", String(active));
       });
-      projectStatus.textContent = filter === "all" ? "Visar alla 9 projekt" : `Visar ${visibleCount} projekt`;
+      updateProjectStatus();
     };
 
     if (!reducedMotion && document.startViewTransition) {
@@ -316,21 +344,21 @@ const stackContent = {
   backend: {
     label: "BACKEND",
     title: "Backend",
-    description: "C#, ASP.NET Core, Web API, Entity Framework och SQL.",
+    descriptionKey: "stack.backendDescription",
     pipeline: ["C#", "ASP.NET Core", "Web API"],
     tools: ["C#", "ASP.NET Core", "Razor Pages", "Web API", "Entity Framework", "SQL"],
   },
   frontend: {
     label: "FRONTEND",
     title: "Frontend",
-    description: "TypeScript, JavaScript, React, Next.js, HTML och CSS.",
+    descriptionKey: "stack.frontendDescription",
     pipeline: ["TypeScript", "React / Next.js", "UI"],
     tools: ["TypeScript", "JavaScript", "React", "Next.js", "HTML", "CSS"],
   },
   delivery: {
-    label: "LEVERANS OCH INTEGRATION",
-    title: "Integration och leverans",
-    description: "Azure, Azure DevOps, CI/CD, Docker, Git, Umbraco, Optimizely och Swish.",
+    labelKey: "stack.deliveryLabel",
+    titleKey: "stack.deliveryTitle",
+    descriptionKey: "stack.deliveryDescription",
     pipeline: ["Integration", "Azure / CI/CD", "Live"],
     tools: ["Azure", "Azure DevOps", "CI/CD", "Docker", "Git", "Umbraco", "Optimizely", "Swish"],
   },
@@ -351,9 +379,9 @@ function selectStack(tab, focusPanel = false) {
     item.setAttribute("aria-selected", String(active));
     item.tabIndex = active ? 0 : -1;
   });
-  stackLabel.textContent = content.label;
-  stackTitle.textContent = content.title;
-  stackDescription.textContent = content.description;
+  stackLabel.textContent = content.labelKey ? translate(content.labelKey) : content.label;
+  stackTitle.textContent = content.titleKey ? translate(content.titleKey) : content.title;
+  stackDescription.textContent = translate(content.descriptionKey);
   stackPipeline.innerHTML = content.pipeline.map((item, index) => `${index ? "<i></i>" : ""}<span>${item}</span>`).join("");
   stackTools.innerHTML = content.tools.map((item) => `<span>${item}</span>`).join("");
   stackPanel.setAttribute("aria-labelledby", tab.id);
@@ -389,17 +417,88 @@ timelineItems.forEach((item) => timelineObserver.observe(item));
 
 const copyEmailButton = document.querySelector("[data-copy-email]");
 const copyEmailStatus = document.querySelector("[data-copy-status]");
+let copyResetTimer;
 copyEmailButton.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText("yaarubnassr@gmail.com");
-    copyEmailButton.textContent = "Kopierad ✓";
+    window.clearTimeout(copyResetTimer);
+    copyEmailButton.textContent = translate("contact.copied");
     copyEmailButton.classList.add("is-copied");
-    copyEmailStatus.textContent = "Mejladressen är kopierad.";
-    window.setTimeout(() => {
-      copyEmailButton.textContent = "Kopiera mejladress";
+    copyEmailStatus.textContent = translate("contact.copyStatus");
+    copyResetTimer = window.setTimeout(() => {
+      copyEmailButton.textContent = translate("contact.copy");
       copyEmailButton.classList.remove("is-copied");
     }, 2200);
   } catch (_) {
-    copyEmailStatus.textContent = "Det gick inte att kopiera. Markera adressen och kopiera manuellt.";
+    copyEmailStatus.textContent = translate("contact.copyError");
   }
 });
+
+const translatedAttributes = [
+  ["data-i18n-aria-label", "aria-label"],
+  ["data-i18n-alt", "alt"],
+  ["data-i18n-content", "content"],
+  ["data-i18n-cursor", "data-cursor"],
+];
+
+function applyLanguage(language, { persist = true, announce = false } = {}) {
+  if (!translations[language]) return;
+  currentLanguage = language;
+  document.documentElement.lang = language;
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    element.textContent = translate(element.dataset.i18n);
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+    element.innerHTML = translate(element.dataset.i18nHtml);
+  });
+  translatedAttributes.forEach(([sourceAttribute, targetAttribute]) => {
+    document.querySelectorAll(`[${sourceAttribute}]`).forEach((element) => {
+      element.setAttribute(targetAttribute, translate(element.getAttribute(sourceAttribute)));
+    });
+  });
+
+  languageButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.language === language));
+  });
+
+  const menuIsOpen = document.body.classList.contains("menu-open");
+  menuButton.setAttribute("aria-label", translate(menuIsOpen ? "menu.close" : "menu.open"));
+
+  const activeHeroFocus = document.querySelector("[data-hero-focus].is-active")?.dataset.heroFocus ?? "backend";
+  heroFocusCopy.textContent = translate(`hero.focus.${activeHeroFocus}`);
+  updateProjectStatus();
+
+  const activeStackTab = document.querySelector("[data-stack-tab][aria-selected='true']") ?? stackTabs[0];
+  selectStack(activeStackTab);
+
+  if (copyEmailButton.classList.contains("is-copied")) {
+    copyEmailButton.textContent = translate("contact.copied");
+    copyEmailStatus.textContent = translate("contact.copyStatus");
+  } else {
+    copyEmailStatus.textContent = "";
+  }
+
+  if (persist) {
+    try {
+      localStorage.setItem("portfolio-language", language);
+    } catch (_) {
+      // The switch still works for the current page view.
+    }
+  }
+
+  if (announce) {
+    languageStatus.textContent = "";
+    requestAnimationFrame(() => {
+      languageStatus.textContent = translate("language.changed");
+    });
+  }
+}
+
+languageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    applyLanguage(button.dataset.language, { announce: true });
+  });
+});
+
+applyLanguage(currentLanguage, { persist: false });

@@ -8,6 +8,7 @@ En skräddarsydd, responsiv portfolio för Yaarub Nassr, fullstackutvecklare i S
 - Nio projektcase: CreaCV, Eskilstuna Klätterklubb, XML-verktyg, bokningsflöde, Pure SkinLab, Nordic Axis och tre tidigare frontendprojekt
 - Erfarenhet, utbildning och komplett teknikprofil
 - Responsiv one-page-design med projektfilter, interaktiv processkortlek, Stack Lab, scroll-reveals och mikrointeraktioner
+- Komplett språkväxlare för svenska och engelska med sparat språkval
 - Tillgänglig navigation, reduced-motion-stöd och semantisk HTML
 - Direktlänkar till e-post, telefon, LinkedIn, GitHub, CodePen och nedladdningsbart CV
 

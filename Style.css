@@ -276,6 +276,47 @@
   .nav a.active {
     color: var(--ink);
   }
+  .language-switcher {
+    position: absolute;
+    top: 50%;
+    right: 0.65rem;
+    display: inline-grid;
+    grid-template-columns: 2.5rem auto 2.5rem;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.2rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(6, 28, 32, 0.68);
+    backdrop-filter: blur(12px);
+    transform: translateY(-50%);
+  }
+  .language-switcher button {
+    min-width: 2.5rem;
+    min-height: 2.35rem;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--muted);
+    font-family: var(--body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+  }
+  .language-switcher > span {
+    color: var(--dim);
+    font-size: 0.65rem;
+  }
+  .language-switcher button:hover {
+    color: var(--ink);
+  }
+  .language-switcher button[aria-pressed="true"] {
+    background: var(--aqua);
+    color: var(--bg);
+  }
   .header-cta {
     display: flex;
     align-items: center;
@@ -1146,6 +1187,23 @@
     display: inline-flex;
     margin-top: 2.2rem;
   }
+  .learning-note {
+    max-width: 46rem;
+    margin-top: 2rem;
+    padding: 1.4rem 1.5rem;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--aqua);
+    border-radius: 0.8rem;
+    background: rgba(85, 181, 199, 0.055);
+  }
+  .learning-note h3 {
+    margin-top: 0.55rem;
+    font-size: clamp(1.35rem, 2.1vw, 1.9rem);
+    letter-spacing: -0.035em;
+  }
+  .learning-note > p:last-child {
+    margin-top: 0.7rem;
+  }
   .principles {
     grid-column: 1 / -1;
     display: grid;
@@ -1891,6 +1949,22 @@
     .menu-button span:last-child {
       transform: translate(-50%, 4px);
     }
+    .language-switcher {
+      position: fixed;
+      z-index: 102;
+      top: max(1rem, env(safe-area-inset-top));
+      left: max(1rem, env(safe-area-inset-left));
+      right: auto;
+      grid-template-columns: 2.6rem auto 2.6rem;
+      min-height: 3.25rem;
+      background: rgba(6, 28, 32, 0.78);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+      transform: none;
+    }
+    .language-switcher button {
+      min-width: 2.6rem;
+      min-height: 2.75rem;
+    }
     .menu-open .menu-button span:first-child {
       transform: translate(-50%, 0) rotate(45deg);
     }
@@ -1921,6 +1995,7 @@
     }
     .nav::before {
       content: "MENY";
+      display: none;
       position: absolute;
       left: clamp(1.5rem, 8vw, 4rem);
       top: 2rem;
